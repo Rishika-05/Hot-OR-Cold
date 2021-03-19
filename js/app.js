@@ -22,25 +22,34 @@ function handleInstructionsModal() {
 // `handleInstructionsModal` function.
 $(document).ready(function(){
 	handleInstructionsModal();
-    var y = Math.floor(Math.random() * 10 + 1); 
+  newGame();
+  }); 
+	/*newGame();
+	document.getElementById("js-guess-submit").onclick = function(){
+	var guess= document.getElementById("js-user-guess").value;
+    var feedback=getf(guess);
+    $(".count").text(count);
+    count++;
+};*/
+    document.getElementById("js-guess-submit").onclick = function()
+    {
+      newGame();
+    }
+
+function newGame(){
+ var y = Math.floor(Math.random() * 10 + 1); 
       
-    // counting the number of guesses 
-    // made for correct Guess 
     var guess = 0; 
       
-   document.getElementById("js-guess-submit").onclick = function(){ 
-      
-   // number guessed by user      
-   var x = parseInt(document.getElementById("js-user-guess").value); 
-  
+   document.getElementById("js-guess-submit").onclick = function(){      
+   var x = document.getElementById("js-user-guess").value; 
    if(x == y) 
    {
        guess++;
        $("span").text(guess);
        $("h2").text("YOU GUESSED IT!");
    } 
-   else if(x > y) /* if guessed number is greater 
-                   than actual number*/ 
+   else if(x > y)
    {     
        guess++; 
        $("span").text(guess);
@@ -52,18 +61,8 @@ $(document).ready(function(){
        $("span").text(guess); 
        $("h2").text("OOPS SORRY!! TRY A GREATER NUMBER");
    } 
+}
 } 
-
-	/*newGame();
-	document.getElementById("js-guess-submit").onclick = function(){
-	var guess= document.getElementById("js-user-guess").value;
-    var feedback=getf(guess);
-    $(".count").text(count);
-    count++;
-};*/
-    
-});
-
 
 /*function newGame()
 {
