@@ -23,6 +23,10 @@ function handleInstructionsModal() {
 $(document).ready(function(){
 	handleInstructionsModal();
   newGame();
+  document.getElementById("js-new-game").onclick = function()
+    {
+      newGame();
+    }
   }); 
 	/*newGame();
 	document.getElementById("js-guess-submit").onclick = function(){
@@ -31,17 +35,16 @@ $(document).ready(function(){
     $(".count").text(count);
     count++;
 };*/
-    document.getElementById("js-guess-submit").onclick = function()
-    {
-      newGame();
-    }
+    
 
 function newGame(){
- var y = Math.floor(Math.random() * 10 + 1); 
+ var y = Math.floor(Math.random() * 100 + 1); 
       
     var guess = 0; 
-      
-   document.getElementById("js-guess-submit").onclick = function(){      
+    $("span").text(guess);
+    $("h2").text("Make Your Guess!!"); 
+   document.getElementById("js-guess-submit").onclick = function(event){
+   event.preventDefault();      
    var x = document.getElementById("js-user-guess").value; 
    if(x == y) 
    {
