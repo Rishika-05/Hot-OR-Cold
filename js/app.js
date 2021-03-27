@@ -52,17 +52,56 @@ function newGame(){
        $("span").text(guess);
        $("h2").text("YOU GUESSED IT!");
    } 
-   else if(x > y)
+   else if(Math.abs(x-y)<=10 )
    {     
        guess++; 
        $("span").text(guess);
-       $("h2").text("OOPS SORRY!! TRY A SMALLER NUMBER");
+       if(y>x)
+       $("h2").text("Hotter..!!(Try greater number)");
+     else
+      $("h2").text("Hotter..!!(Try smaller number)");
+   } 
+   else if(Math.abs(x-y)<=20)
+   {     
+       guess++; 
+       $("span").text(guess);
+       if(y>x)
+        $("h2").text("Hot..!!(Try greater number)");
+     else
+      $("h2").text("Hot..!!(Try smaller number)");
+   } 
+   else if(Math.abs(x-y)<=30)
+   {     
+       guess++; 
+       $("span").text(guess);
+       if(y>x)
+        $("h2").text("Warm..!!(Try greater number)");
+     else
+      $("h2").text("Warm..!!(Try smaller number)");
+   } 
+   else if(Math.abs(x-y)<=40)
+   {     
+       guess++; 
+       $("span").text(guess);
+       if(y>x)
+       $("h2").text("Cold..!!(Try greater number)");
+     else
+      $("h2").text("Cold..!!(Try smaller number)");
+   } 
+   else if(Math.abs(x-y)<=50)
+   {     
+       guess++; 
+       $("span").text(guess);
+       if(y>x)
+        $("h2").text("Colder..!!(Try greater number)");
+     else
+      $("h2").text("Colder..!!(Try smaller number)");
    } 
    else
    { 
        guess++;
        $("span").text(guess); 
-       $("h2").text("OOPS SORRY!! TRY A GREATER NUMBER");
+       $("h2").text("Veryy far.....!!");
    } 
 }
 } 
